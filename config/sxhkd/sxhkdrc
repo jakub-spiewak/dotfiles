@@ -23,9 +23,12 @@ super + Escape
 super + {_,shift + }{1-9,0}
   	bspc {desktop -f,node -d} '^{1-9,10}'paces
 
+ctrl + alt + {Left, Right}
+	bspc node -f {prev,next}.local.window
+
 # Toggle window
 alt + Tab
-	bspc node -f next
+	bspc node -f next.local.window
 
 # Close window
 super + q
@@ -33,7 +36,7 @@ super + q
 
 # Fullscreen
 super + {f}
-	bspc node -t {tiled,fullscreen}
+	bspc node -t tiled,fullscreen
 
 ##### Apps #####
 
