@@ -3,6 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 ~/.scripts/screens-fix.sh &
 ~/.scripts/set-wallpaper.sh &
+~/.scripts/launch-polybar.sh &
 picom --experimental-backends -b &
 
 
