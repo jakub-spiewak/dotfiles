@@ -40,7 +40,7 @@ super + Tab
 	bspc desktop -f 'next.occupied'
 
 # Resize current node
-super + alt + {h,j,k,l}
+super + alt + {Left,Down,Up,Right}
         bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Close window
