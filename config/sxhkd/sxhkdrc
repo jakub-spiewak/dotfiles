@@ -19,24 +19,51 @@ super + Escape
 
 ##### Workspaces ##### 
 
-# Focus window & Move focused window
+# Focus desktop & Move focused node to desktop
 super + {_,shift + }{1-9,0}
   	bspc {desktop -f,node -d} '^{1-9,10}'paces
 
-ctrl + alt + {Left, Right}
+# Focus by direction
+super + {_,shift + }{Left,Down,Up,Right}
+        bspc node -{f,s} {west,south,north,east}
+
+# Focus next
+alt + Tab
+	bspc node -f next.local.window
+
+# Focus next/prev
+super + ctrl + {Left, Right}
 	bspc node -f {prev,next}.local.window
 
 # Toggle window
-alt + Tab
-	bspc node -f next.local.window
+super + Tab
+	bspc desktop -f 'next.occupied'
+
+# Resize current node
+super + alt + {h,j,k,l}
+        bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # Close window
 super + q
 	bspc node -c
 
+# Toggle floating
+super + d
+    if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+        bspc node focused -t floating; \
+    else \
+        bspc node focused -t tiled; \
+    fi
+
 # Fullscreen
 super + {f}
-	bspc node -t tiled,fullscreen
+    if [ -z "$(bspc query -N -n focused.fullscreen)" ]; then \
+        bspc node focused -t fullscreen; \
+    else \
+        bspc node focused -t tiled; \
+    fi
+
+
 
 ##### Apps #####
 
