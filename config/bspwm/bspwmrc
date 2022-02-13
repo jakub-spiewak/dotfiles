@@ -1,7 +1,7 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-~/.scripts/screens-fix.sh &
+# ~/.scripts/screens-fix.sh &
 ~/.scripts/set-wallpaper.sh &
 ~/.scripts/launch-polybar.sh &
 picom --experimental-backends -b &
@@ -9,9 +9,9 @@ picom --experimental-backends -b &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width         8
-bspc config window_gap          19.2
-bspc config top_padding		104
+bspc config border_width	4
+bspc config window_gap          8
+# bspc config top_padding		104
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true

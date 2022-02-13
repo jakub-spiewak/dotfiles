@@ -9,6 +9,10 @@ XF86AudioLowerVolume
 XF86AudioMute
 	amixer set Master toggle
 
+# Rofi
+super + @space
+	rofi -show drun
+
 # Terminal
 super + Return
 	kitty
@@ -71,6 +75,9 @@ super + {f}
 alt + {f}
 	firefox
 	
+# Brave
+alt + {b}
+	brave
 
 
 
